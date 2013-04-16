@@ -1,37 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-                android:orientation="horizontal"
-                android:layout_width="match_parent"
-                android:layout_height="75dp"
-                android:background="#ade0ff" android:id="@+id/issue_item"
-                android:focusableInTouchMode="false" android:paddingTop="2dp" android:paddingBottom="2dp"
-                android:baselineAligned="true">
-
-    <ImageView
-            android:layout_width="75dp"
-            android:layout_height="75dp"
-            android:id="@+id/issue_thumbnail" android:layout_gravity="center_horizontal|top"
-            android:background="#e8faff"
-            android:padding="1dp"/>
-
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+              android:orientation="vertical"
+              android:layout_width="match_parent"
+              android:layout_height="wrap_content"
+              android:background="#fff"
+              android:id="@+id/issue_item"
+              android:baselineAligned="true">
     <TextView
-            android:layout_width="124dp"
-            android:layout_height="31dp"
-            android:text="New Text"
-            android:id="@+id/title" android:layout_gravity="center" android:layout_weight="1"
-            android:padding="2dp" android:gravity="center" android:textSize="15dp" android:textColor="#454545"
-            android:inputType="textCapWords" android:maxLines="1"
-            android:layout_alignParentLeft="true" android:layout_marginLeft="65dp"
-            android:layout_alignParentTop="true" android:layout_alignParentRight="true"/>
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/title"
+            android:layout_weight="1"
+            android:maxLines="1"
+            android:hint="Title"
+            android:textStyle="bold"/>
     <TextView
-            android:layout_width="184dp"
-            android:layout_height="0dp"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
             android:id="@+id/description"
-            android:layout_gravity="center"
             android:layout_weight="2"
-            android:gravity="center"
-            android:layout_alignParentLeft="true" android:layout_marginLeft="82dp"
-            android:layout_below="@+id/title" android:layout_alignParentBottom="true"/>
+            android:hint="Description"/>
 
-</RelativeLayout>
+</LinearLayout>
