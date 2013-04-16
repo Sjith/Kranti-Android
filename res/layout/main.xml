@@ -3,34 +3,54 @@
               android:orientation="vertical"
               android:layout_width="fill_parent"
               android:background="#ccc"
-              android:layout_height="fill_parent" >
-
-    <ImageButton
-            xmlns:android="http://schemas.android.com/apk/res/android"
-            android:id="@+id/issue_image_capture"
-            android:layout_width="150dip"
-            android:layout_height="150dip"
-            android:layout_gravity="center"
-            android:layout_margin="2dp"
-            android:background="@drawable/camera_icon"
-            android:onClick="captureIssueImage" />
-
-    <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/titleText" android:layout_gravity="left|center_vertical" android:hint="Title"
-            android:textStyle="bold" android:inputType="textCapWords"/>
-    <EditText
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:id="@+id/descriptionText" android:layout_gravity="left|center_vertical" android:hint="Description"
-            android:inputType="textMultiLine|textCapSentences"/>
-    <Button
-            android:layout_width="fill_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit"
-            android:onClick="submit"
-            android:id="@+id/submitButton" android:layout_gravity="left|center_vertical"/>
-
+              android:layout_height="fill_parent">
+    <LinearLayout android:orientation="horizontal"
+                  android:layout_width="fill_parent"
+                  android:background="#ccc"
+                  android:layout_height="wrap_content"
+                  android:layout_gravity="center"
+                  android:showDividers="none">
+        <Button android:id="@+id/issue_image_capture"
+                android:drawableLeft="@android:drawable/ic_menu_camera"
+                android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:layout_gravity="center|bottom|left"
+                android:onClick="captureIssueImage"
+                android:text="Click"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/issueSubmitButton"
+                android:hint="Submit"
+                android:onClick="submit"
+                android:text="Submit"
+                android:layout_gravity="center|left"/>
+        <Button android:layout_width="wrap_content"
+                android:layout_height="fill_parent"
+                android:id="@+id/issueCancelButton"
+                android:hint="Cancel"
+                android:text="Cancel"
+                android:layout_gravity="right"
+                android:onClick="returnToHomeScreen"/>
+    </LinearLayout>
+    <LinearLayout android:orientation="vertical"
+                  android:layout_width="fill_parent"
+                  android:background="#ccc"
+                  android:layout_height="200dip">
+        <EditText android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:id="@+id/titleText"
+                  android:layout_gravity="left|center_vertical"
+                  android:hint="Title"
+                  android:textStyle="bold"
+                  android:inputType="textCapWords"/>
+        <EditText android:layout_width="fill_parent"
+                  android:layout_height="fill_parent"
+                  android:id="@+id/descriptionText"
+                  android:layout_gravity="left"
+                  android:hint="Description"
+                  android:inputType="textMultiLine|textCapSentences"
+                  android:textAlignment="textStart"
+                  android:textStyle="normal"/>
+    </LinearLayout>
 </LinearLayout>
 
