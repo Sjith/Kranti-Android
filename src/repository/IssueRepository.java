@@ -19,11 +19,17 @@ public class IssueRepository {
         serverStorage = new ServerStorage();
     }
 
-    public void createIssue(String title, String description, String location, String imagePath) {
+    public boolean createIssue(String title, String description, String location, String imagePath) {
         Issue issue = new Issue(title, description, location, imagePath);
-        dataStorage.store(issue);
-        serverStorage.store(issue);
-        Toast.makeText(context, "Report captured", 1).show();
+        if(issue.isValid()) {
+            dataStorage.store(issue);
+            serverStorage.store(issue);
+            Toast.makeText(context, "Report captured", 1).show();
+            return true;
+        } else {
+            Toast.makeText(context, "#fail :( image could not be stored. Try again", Toast.LENGTH_LONG).show();
+            return false;
+        }
     }
 
     public List<Issue> getIssues() {

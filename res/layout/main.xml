@@ -23,14 +23,7 @@
                 android:hint="Submit"
                 android:onClick="submit"
                 android:text="Submit"
-                android:layout_gravity="center|left"/>
-        <Button android:layout_width="wrap_content"
-                android:layout_height="fill_parent"
-                android:id="@+id/issueCancelButton"
-                android:hint="Cancel"
-                android:text="Cancel"
-                android:layout_gravity="right"
-                android:onClick="returnToHomeScreen"/>
+                android:layout_gravity="center"/>
     </LinearLayout>
     <LinearLayout android:orientation="vertical"
                   android:layout_width="fill_parent"
