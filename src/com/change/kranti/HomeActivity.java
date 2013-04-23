@@ -12,12 +12,12 @@ public class HomeActivity extends Activity {
         setContentView(R.layout.home);
     }
 
-    public void reportIssue(View view){
+    public void reportIssue(View _){
         Intent intent = new Intent(this, CaptureIssueActivity.class);
         startActivity(intent);
     }
 
-    public void viewIssues(View view){
+    public void viewIssues(View _){
         Intent intent = new Intent(this, ViewIssuesActivity.class);
         startActivity(intent);
     }

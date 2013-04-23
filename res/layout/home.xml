@@ -6,7 +6,32 @@
                 android:layout_height="fill_parent"
                 android:textAlignment="center" android:clickable="false"
                 android:background="#ffffff">
-
+    <ImageView
+            android:layout_width="128dp"
+            android:layout_height="42dp"
+            android:id="@+id/krantiIcon"
+            android:src="@drawable/ic_torch_transparent_bg"
+            android:contentDescription="krantiIcon"
+            android:layout_alignRight="@+id/projectKrantiTextView"
+            android:layout_alignLeft="@+id/projectKrantiTextView"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Project Kranti"
+            android:id="@+id/projectKrantiTextView"
+            android:textSize="22sp"
+            android:textAlignment="center"
+            android:singleLine="false"
+            android:layout_centerHorizontal="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="64dp"/>
+    <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="BE THE CHANGE"
+            android:id="@+id/beTheChangeTextView"
+            android:textAlignment="center"
+            android:layout_centerHorizontal="true" android:layout_below="@+id/projectKrantiTextView"/>
     <Button
             android:id="@+id/issueButton"
             android:text="Report an issue"
@@ -31,21 +56,8 @@
             android:layout_gravity="center"
             android:singleLine="false"
             android:drawableLeft="@android:drawable/ic_menu_agenda"
-            android:textColor="#bd3d11" android:layout_alignLeft="@+id/issueButton"
+            android:textColor="#bd3d11"
+            android:layout_alignLeft="@+id/issueButton"
             android:layout_alignRight="@+id/issueButton"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="Project Kranti"
-            android:id="@+id/projectKrantiTextView"
-            android:textSize="22sp" android:textAlignment="center" android:singleLine="false"
-            android:layout_centerHorizontal="true" android:layout_alignParentTop="true"
-            android:layout_marginTop="64dp"/>
-    <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="BE THE CHANGE"
-            android:id="@+id/beTheChangeTextView"
-            android:textAlignment="center"
-            android:layout_centerHorizontal="true" android:layout_below="@+id/projectKrantiTextView"/>
+
 </RelativeLayout>
