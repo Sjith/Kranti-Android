@@ -3,6 +3,7 @@ package repository;
 import Storage.DataStorage;
 import Storage.ServerStorage;
 import android.content.Context;
+import android.provider.Settings;
 import android.widget.Toast;
 import model.Issue;
 
@@ -20,8 +21,8 @@ public class IssueRepository {
     }
 
     public boolean createIssue(String title, String description, String location, String imagePath) {
-        Issue issue = new Issue(title, description, location, imagePath);
-        if(issue.isValid()) {
+        Issue issue = new Issue(title, description, location, imagePath, getDeviceId());
+        if (issue.isValid()) {
             dataStorage.store(issue);
             serverStorage.store(issue);
             Toast.makeText(context, "Report captured", 1).show();
@@ -30,6 +31,11 @@ public class IssueRepository {
             Toast.makeText(context, "#fail :( image could not be stored. Try again", Toast.LENGTH_LONG).show();
             return false;
         }
+    }
+
+    private String getDeviceId() {
+        return Settings.Secure.getString(context.getContentResolver(),
+                Settings.Secure.ANDROID_ID);
     }
 
     public List<Issue> getIssues() {

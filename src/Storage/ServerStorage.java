@@ -56,6 +56,7 @@ public class ServerStorage extends AsyncTask<String, Void, String> {
     private MultipartEntity generatePostEntity() {
         try {
             MultipartEntity entity = new MultipartEntity();
+            entity.addPart("issue[uuid]", new StringBody(issue.getOwnerDeviceId()));
             entity.addPart("issue[title]", new StringBody(issue.getTitle()));
             entity.addPart("issue[description]", new StringBody(issue.getDescription()));
             entity.addPart("issue[location]", new StringBody(issue.getLocation()));
